@@ -2,7 +2,7 @@ import { useState } from "react";
 import Hero from "./components/Hero";
 import Form from "./components/Form";
 import Table from "./components/Table";
-
+import Button from "./components/Buttons";
 export default function App() {
   const [displayTable, setDisplayTable] = useState(false);
   const [showTable, setShowTable] = useState(false);
@@ -11,7 +11,6 @@ export default function App() {
   const [gender, setGender] = useState("");
   const [submitForm, setSubmitForm] = useState([]);
   const [editIndex, setEditIndex] = useState(null);
-
   const deletePerson = (index) => {
     setSubmitForm(submitForm.filter((_, i) => i !== index));
   };
@@ -30,7 +29,6 @@ export default function App() {
   const handleSubmitData = (e) => {
     e.preventDefault();
     const newEntry = { person, age, gender };
-
     if (editIndex !== null) {
       const updatedData = [...submitForm];
       updatedData[editIndex] = newEntry;
@@ -52,16 +50,15 @@ export default function App() {
     setAge(personToEdit.age);
     setGender(personToEdit.gender);
     setEditIndex(index);
-    setDisplayTable(true); 
+    setDisplayTable(true);
     setShowTable(false);
   };
 
   const resetForm = () => {
     setPerson("");
-    setAge(""); 
+    setAge("");
     setGender("");
   };
-
 
   return (
     <div>
@@ -77,8 +74,16 @@ export default function App() {
         />
       )}
       {showTable && (
-        <Table data={submitForm} deletePerson={deletePerson} editPerson={handleEditPerson} setDisplayTable={setDisplayTable} handleTable={setShowTable} />
+        <Table
+          data={submitForm}
+          deletePerson={deletePerson}
+          editPerson={handleEditPerson}
+          setDisplayTable={setDisplayTable}
+          handleTable={setShowTable}
+        />
       )}
+
+      <Button />
     </div>
   );
 }
