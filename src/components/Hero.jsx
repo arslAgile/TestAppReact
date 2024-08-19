@@ -1,13 +1,13 @@
-export default function Hero({setDisplayTable, handleTable }) {
+export default function Hero({changeDisplayTable, handleShowTable }) {
   const showForm = () => {
-    setDisplayTable(true);
-    handleTable(false)
+    changeDisplayTable(true);
+    handleShowTable(false)
     setTimeout(() => { document.getElementById('forms-section').scrollIntoView({ behavior: 'smooth' }); }, 100);
   }
 
   const showTable = () => {
-    setDisplayTable(false);
-    handleTable(true)
+    changeDisplayTable(false);
+    handleShowTable(true)
     setTimeout(() => { document.getElementById('table-section').scrollIntoView({ behavior: 'smooth' }); }, 100);
   }
   return (

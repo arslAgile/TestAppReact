@@ -62,7 +62,7 @@ export default function App() {
 
   return (
     <div>
-      <Hero setDisplayTable={setDisplayTable} handleTable={setShowTable} />
+      <Hero changeDisplayTable={setDisplayTable} handleShowTable={setShowTable} />
       {displayTable && (
         <Form
           handleFormsData={handleFormChange}
@@ -79,7 +79,7 @@ export default function App() {
           handleDeletePerson={deletePerson}
           changeEditPerson={handleEditPerson}
           handleDisplayTable={setDisplayTable}
-          handleTable={setShowTable}
+          handleShowTable={setShowTable}
         />
       )}
 

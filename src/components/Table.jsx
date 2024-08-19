@@ -5,11 +5,11 @@ export default function Table({
   handleDeletePerson,
   changeEditPerson,
   handleDisplayTable,
-  handleTable,
+  handleShowTable,
 }) {
   const showForm = () => {
     handleDisplayTable(true);
-    handleTable(false);
+    handleShowTable(false);
   };
   return (
     <div
