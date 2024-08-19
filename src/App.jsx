@@ -76,9 +76,9 @@ export default function App() {
       {showTable && (
         <Table
           data={people}
-          deletePerson={deletePerson}
-          editPerson={handleEditPerson}
-          setDisplayTable={setDisplayTable}
+          handleDeletePerson={deletePerson}
+          changeEditPerson={handleEditPerson}
+          handleDisplayTable={setDisplayTable}
           handleTable={setShowTable}
         />
       )}
