@@ -9,10 +9,10 @@ export default function App() {
   const [person, setPerson] = useState("");
   const [age, setAge] = useState("");
   const [gender, setGender] = useState("");
-  const [submitForm, setSubmitForm] = useState([]);
+  const [people, setPeople] = useState([]);
   const [editIndex, setEditIndex] = useState(null);
   const deletePerson = (index) => {
-    setSubmitForm(submitForm.filter((_, i) => i !== index));
+    setPeople(people.filter((_, i) => i !== index));
   };
 
   const handleFormChange = (e) => {
@@ -30,12 +30,12 @@ export default function App() {
     e.preventDefault();
     const newEntry = { person, age, gender };
     if (editIndex !== null) {
-      const updatedData = [...submitForm];
+      const updatedData = [...people];
       updatedData[editIndex] = newEntry;
-      setSubmitForm(updatedData);
+      setPeople(updatedData);
       setEditIndex(null);
     } else {
-      setSubmitForm([...submitForm, newEntry]);
+      setPeople([...people, newEntry]);
     }
     setShowTable(true);
     setDisplayTable(false);
@@ -45,7 +45,7 @@ export default function App() {
   };
 
   const handleEditPerson = (index) => {
-    const personToEdit = submitForm[index];
+    const personToEdit = people[index];
     setPerson(personToEdit.person);
     setAge(personToEdit.age);
     setGender(personToEdit.gender);
@@ -75,7 +75,7 @@ export default function App() {
       )}
       {showTable && (
         <Table
-          data={submitForm}
+          data={people}
           deletePerson={deletePerson}
           editPerson={handleEditPerson}
           setDisplayTable={setDisplayTable}

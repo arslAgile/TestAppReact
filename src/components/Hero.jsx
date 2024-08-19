@@ -1,4 +1,4 @@
-export default function Hero({setDisplayTable, handleTable, setVisibale }) {
+export default function Hero({setDisplayTable, handleTable }) {
   const showForm = () => {
     setDisplayTable(true);
     handleTable(false)
