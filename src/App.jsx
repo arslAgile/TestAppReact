@@ -2,7 +2,6 @@ import { useState } from "react";
 import Hero from "./components/Hero";
 import Form from "./components/Form";
 import Table from "./components/Table";
-import Button from "./components/Buttons";
 export default function App() {
   const [displayTable, setDisplayTable] = useState(false);
   const [showTable, setShowTable] = useState(false);
@@ -82,8 +81,6 @@ export default function App() {
           handleShowTable={setShowTable}
         />
       )}
-
-      <Button />
     </div>
   );
 }
